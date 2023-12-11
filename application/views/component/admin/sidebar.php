@@ -7,7 +7,7 @@
             <a href="<?= base_url('home') ?>">SPK</a>
         </div>
         <ul class="sidebar-menu">
-            <li class="<?= $this->uri->segment(1) === 'home' ? "active" : "" ?>"><a class="nav-link" href="<?= base_url('home') ?>"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li class="<?= $this->uri->segment(1) === 'home' || $this->uri->segment(1) === '' ? "active" : "" ?>"><a class="nav-link" href="<?= base_url('home') ?>"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
 
             <li class="menu-header">Pages</li>
             <li class="<?= $this->uri->segment(1) === 'criteria' ? "active" : "" ?>"><a class="nav-link" href="<?= base_url('criteria') ?>"><i class="fas fa-cube"></i> <span>Criteria</span></a></li>

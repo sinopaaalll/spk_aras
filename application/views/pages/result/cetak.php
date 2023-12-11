@@ -38,7 +38,7 @@
         <h2>Kesimpulan</h2>
     </center>
     <p>
-        * Dari nilai K<sub>i</sub> ini dapat dilihat bahwa <?= $data['alternatif'] ?> memiliki nilai terbesar. Sehingga dapat disimpulkan bahwa <?= $data['alternatif'] ?> akan dipilih. Dengan kata lain, <?= $data['desc'] ?> menjadi alternatif paling tepat untuk supplai barang Toko PT. Elang Perkasa.
+        * Dari nilai K<sub>i</sub> ini dapat dilihat bahwa <?= $data['alternatif'] ?> memiliki nilai terbesar. Sehingga dapat disimpulkan bahwa <?= $data['alternatif'] ?> akan dipilih. Dengan kata lain, <?= $data['desc'] ?> menjadi alternatif paling tepat untuk supplai barang TB. BINA ELANG PERKASA CAMPAKA.
     </p>
 
     <script>

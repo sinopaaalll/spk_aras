@@ -78,23 +78,31 @@ class Result extends CI_Controller
 
         foreach ($result as $r) {
             if ($r->result !== "") {
-                // Jika $max masih null atau $r->result lebih besar dari $max['value']
-                if ($max === null || $r->result > $max['value']) {
+                $resultValue = floatval($r->result);  // Convert the string to a floating-point number
+
+                // Jika $max masih null atau $resultValue lebih besar dari $max['value']
+                if ($max === null || bccomp($resultValue, $max['value'], 4) === 1) {
                     // Perbarui nilai maksimum dan atur sebagai elemen pertama
                     $max = array(
                         'id' => $r->id,
-                        'value' => $r->result
+                        'value' => $resultValue
                     );
                     array_unshift($array_max, $max);
                 } else {
                     // Simpan setiap nilai dalam array_max (kecuali yang terbesar)
                     $array_max[] = array(
                         'id' => $r->id,
-                        'value' => $r->result
+                        'value' => $resultValue
                     );
                 }
             }
         }
+
+
+        // var_dump($array_max);
+        // die();
+
+
 
         // Update ranking di tabel result
         foreach ($array_max as $ranking => $max_item) {

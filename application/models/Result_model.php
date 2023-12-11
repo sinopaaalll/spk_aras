@@ -9,7 +9,7 @@ class Result_model extends CI_Model
         $this->db->select('result.*, alternatives.name AS alternative_name, alternatives.description');
         $this->db->from('result');
         $this->db->join('alternatives', 'result.alternative_id = alternatives.id');
-        $this->db->order_by('result.ranking', 'ASC');
+        $this->db->order_by('result.result', 'DESC');
         return $this->db->get()->result();
     }
 
