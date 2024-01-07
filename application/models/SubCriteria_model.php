@@ -10,6 +10,16 @@ class SubCriteria_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function get_sub_criteria_by_criteria($criteria)
+    {
+        $this->db->select('subcriteria.*, criteria.name as criteria');
+        $this->db->from('subcriteria');
+        $this->db->join('criteria', 'criteria.id = subcriteria.criteria_id');
+        $this->db->where('criteria_id', $criteria);
+        // $this->db->group_by('subcriteria.criteria_id');
+        return $this->db->get()->result();
+    }
+
     public function get_sub_criteria_by_id($id)
     {
         return $this->db->get_where('subcriteria', array('id' => $id))->row();

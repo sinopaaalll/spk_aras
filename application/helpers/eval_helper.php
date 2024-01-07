@@ -2,6 +2,23 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 if (!function_exists('get_evaluation_value')) {
+    function get_evaluation($evaluation, $subcriteria, $alternative, $criteria)
+    {
+        foreach ($evaluation as $key => $value) {
+            if ($value['alternative'] == $alternative && $value['criteria'] == $criteria) {
+                $nilai =  $value['value'];
+                foreach ($subcriteria as $key => $value1) {
+                    if ($value1->criteria == $criteria && $value1->weight == $nilai) {
+                        return $value1->name;
+                    }
+                }
+            }
+        }
+        return ''; // Nilai default jika tidak ditemukan
+    }
+}
+
+if (!function_exists('get_evaluation_value')) {
     function get_evaluation_value($evaluation, $alternative, $criteria)
     {
         foreach ($evaluation as $key => $value) {

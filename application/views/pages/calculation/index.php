@@ -21,6 +21,52 @@
                     <div class="col-sm-12 col-md-12">
                         <div class="card">
                             <div class="card-header">
+                                <h4 class="card-title"><span class="fa fa-calculator"></span> Data Penilaian </h4>
+                            </div>
+                            <div class="card-body">
+                                <!-- Tabel Evaluasi -->
+                                <table class="table table-bordered text-center" id="non-datatable">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2">Alternative</th>
+                                            <th colspan="<?= count($criteria) ?>">Criteria</th>
+                                        </tr>
+                                        <tr>
+                                            <?php foreach ($criteria as $key => $value) { ?>
+                                                <th><?= $value->description ?></th>
+                                            <?php } ?>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <?php foreach ($alternative as $key1 => $value1) { ?>
+                                            <tr>
+                                                <th class="text-left"><?= $value1->description ?></th>
+                                                <?php foreach ($criteria as $key2 => $value2) { ?>
+                                                    <!-- Menambahkan calculate_x0 sebelum get_evaluation_value -->
+                                                    <td><?= get_evaluation($evaluation, $subcriteria, $value1->name, $value2->name) ?></td>
+                                                <?php } ?>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="text-left">Tipe</th>
+                                            <?php foreach ($criteria as $key => $value) { ?>
+                                                <th><?= $value->jenis ?></th>
+                                            <?php } ?>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
                                 <h4 class="card-title"><span class="fa fa-calculator"></span> Data Perhitungan </h4>
                             </div>
                             <div class="card-body">

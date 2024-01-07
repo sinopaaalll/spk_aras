@@ -30,7 +30,7 @@ class SubCriteria extends CI_Controller
         $data = array(
             'criteria_id' => $this->input->post('criteria'),
             'name' => $this->input->post('name'),
-            'description' => $this->input->post('description'),
+            // 'description' => $this->input->post('description'),
             'weight' => $this->input->post('weight')
         );
 
@@ -59,7 +59,7 @@ class SubCriteria extends CI_Controller
         $data = array(
             'criteria_id' => $this->input->post('criteria'),
             'name' => $this->input->post('name'),
-            'description' => $this->input->post('description'),
+            // 'description' => $this->input->post('description'),
             'weight' => $this->input->post('weight')
         );
 

@@ -24,7 +24,7 @@
                                 <input type="hidden" name="id" id="id_alternative" value="<?= $id_alternative ?>">
                                 <?php foreach ($criteria as $key => $value) { ?>
                                     <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"><?= $value->name ?> *</label>
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"><?= $value->description ?> *</label>
                                         <input type="hidden" name="id<?= $key ?>" value="<?= $evaluation[$key]['id'] ?>">
                                         <input type="hidden" name="criteria<?= $key ?>" value="<?= $value->id ?>">
                                         <div class="col-sm-12 col-md-6">

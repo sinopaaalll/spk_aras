@@ -27,7 +27,7 @@
                                         <select name="criteria" id="criteria" class="form-control" required>
                                             <option value="" disabled>Pilih Criteria</option>
                                             <?php foreach ($criteria as $c) { ?>
-                                                <option value="<?= $c->id ?>" <?= $c->id == $subcriteria->criteria_id ? "selected" : "" ?>><?= $c->name ?></option>
+                                                <option value="<?= $c->id ?>" <?= $c->id == $subcriteria->criteria_id ? "selected" : "" ?>><?= $c->description ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -38,12 +38,12 @@
                                         <input type="text" class="form-control" name="name" placeholder="Masukkan sub criteria" value="<?= $subcriteria->name ?>" required>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-4">
+                                <!-- <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Desc</label>
                                     <div class="col-sm-12 col-md-6">
                                         <textarea class="form-control" name="description"><?= $subcriteria->description ?></textarea>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Bobot*</label>
                                     <div class="col-sm-12 col-md-6">

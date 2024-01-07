@@ -16,7 +16,7 @@
                         <?php foreach ($criteria as $c) { ?>
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title"> <?= $title . " " . $c->name ?></h4>
+                                    <h4 class="card-title"> <?= $title . " " . $c->description ?></h4>
                                 </div>
                                 <div class="card-body">
                                     <table class="table table-striped">
@@ -24,7 +24,6 @@
                                             <tr>
                                                 <th width="7%">No</th>
                                                 <th>Sub Criteria Name</th>
-                                                <th>Deskripsi</th>
                                                 <th>Bobot</th>
                                             </tr>
                                         </thead>
@@ -42,7 +41,6 @@
                                                                 <a href="<?= base_url('subcriteria/delete/' . $data->id) ?>" class="text-danger btn-hapus" data-id="<?= $data->id ?>">Hapus</a>
                                                             </div>
                                                         </td>
-                                                        <td><?= $data->description ?></td>
                                                         <td><?= $data->weight ?></td>
                                                     </tr>
                                             <?php }

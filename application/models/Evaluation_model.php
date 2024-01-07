@@ -15,6 +15,16 @@ class Evaluation_model extends CI_Model
         return $this->db->get()->result_array();
     }
 
+    public function get_all_evaluation2()
+    {
+        $this->db->select('evaluations.*, criteria.description as criteria, alternatives.name as description, subcriteria.name as subcriteria');
+        $this->db->from('evaluations');
+        $this->db->join('criteria', 'criteria.id = evaluations.criteria_id');
+        $this->db->join('subcriteria', 'subcriteria.criteria_id = evaluations.criteria_id');
+        $this->db->join('alternatives', 'alternatives.id = evaluations.alternative_id');
+        return $this->db->get()->result_array();
+    }
+
     public function get_evaluation_by_alternative($id)
     {
         return $this->db->get_where('evaluations', array('alternative_id' => $id))->result_array();
